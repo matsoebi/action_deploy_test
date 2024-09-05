@@ -1,0 +1,27 @@
+name: deployment test
+
+on:
+  workflow_dispatch:
+    inputs:
+        build_artefact:
+            type: choice
+            description: artefact to deploy
+            options:
+                - v0.0.1
+                - v0.0.2
+        environemnt:
+            type: environment
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
